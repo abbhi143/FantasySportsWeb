@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html> <!--  Directive starting point, angular initialize in the block.-->
+<head>
+
+<script type="text/javascript" src="custom/angular.min.js"></script>
+
+<script type="text/javascript" src="js/includeEx.js"></script>
+</head>
+<body >
+
+<div ng-app="myModule">
+
+	<div ng-controller="myController">
+	
+	<select ng-model="selectValue">
+	<option value="header.html">List</option>
+	<option value="footer.html">Table</option>
+	</select>
+		<div ng-include="'header.html'"></div>
+	</div>
+</div>
+</body>
+
+</html>
+

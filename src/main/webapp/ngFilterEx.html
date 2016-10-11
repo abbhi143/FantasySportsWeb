@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<script type="text/javascript" src="custom/angular_uncompressed.js"></script>
+
+<script type="text/javascript" src="js/ngFillter.js"></script>
+<title>Insert title here</title>
+</head>
+
+<body ng-app="myModule">
+	<div ng-controller="myController">
+Enter a Name
+<input type="text" ng-model="filterData.name"/><br/>
+
+Enter a salary
+<input type="text" ng-model="filterData.salary"/> <br/>
+
+Exact Match <input type="checkbox" ng-model="exact"/>
+		<table>
+		<tr>
+			<th>Name</th>
+			<th>Dob</th>
+			<th>Gender</th>
+			<th>Salary</th>
+		</tr>
+		<tr ng-repeat="std in students |  filter:filterData:exact"> 
+		<td>{{std.name}}</td>
+		<td>{{std.dob}}</td>
+		<td>{{std.gender}}</td>
+		<td>{{std.salary}}</td>
+		</tr>
+		</table>
+	</div>
+
+		
+</body>
+</html>

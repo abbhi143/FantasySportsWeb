@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html> <!--  Directive starting point, angular initialize in the block.-->
+<head>
+<title>Hello World, AngularJS - ViralPatel.net</title>
+<script type="text/javascript" src="custom/angular.min.js"></script>
+
+<script type="text/javascript" src="js/filterExample.js"></script>
+</head>
+<body >
+
+<div ng-app="myModule">
+
+	<div ng-controller="myController">
+	 Limit to <input type="number" ng-model="applyRows"/>
+	  Order By:<select ng-model="sortColumn" > 
+ 	<option value="name">Name ASC</option> 
+ 	<option value="dob">dob ASC</option> 
+ 	<option value="-dob">dob DESC</option> 
+ 	<option value="-salary">salary DESC</option> 
+ 	<option value="+salary">salary ASC</option> 
+ 	</select> 
+ 	<input type="checkbox" ng-model="exactMatch"/>Exact Match<br/>
+ 	Search by Name:<input type="text" ng-model="filterTable"/><br/>
+ 	<!-- Search by salary:<input type="text" ng-model="filterTable.salary"/><br/>-->
+		<table>
+		<tr>
+			<th>Name</th>
+			<th>Dob</th>
+			<th>Gender</th>
+			<th>Salary</th>
+		</tr>
+		<tr ng-repeat="std in students | orderBy:sortColumn | filter:filterTable:exactMatch"> <!-- | limitTo:applyRows:3 '+salary "   | orderBy:sortColumn-->
+		<td>{{std.name | lowercase}}</td>
+		<td>{{std.dob}}</td>
+		<td>{{std.gender | uppercase}}</td>
+		<td>{{std.salary}}</td>
+		</tr>
+		</table>
+	</div>
+</div>
+</body>
+
+</html>
+

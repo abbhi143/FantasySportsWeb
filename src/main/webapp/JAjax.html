@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+function callAjax()
+{
+
+	var xmlhttp=loadXMLHttpRequest();
+	xmlhttp.open("GET", "test.txt", false);//async--false.. sync==true
+	xmlhttp.send();
+	if(xmlhttp.status != '404') {
+		alert(xmlhttp.responseText);
+	}
+}
+function loadXMLHttpRequest() {
+	if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+		xmlhttp = new XMLHttpRequest();
+	} else {// code for IE6, IE5
+		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	return xmlhttp;
+}
+
+</script>
+</head>
+<body>
+<div> First content</div>
+<input type="button" value="Ajax Call" onclick="callAjax();"/>
+</body>
+</html>

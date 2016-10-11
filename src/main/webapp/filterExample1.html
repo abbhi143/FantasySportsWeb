@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html> <!--  Directive starting point, angular initialize in the block.-->
+<head>
+<title>Hello World, AngularJS - ViralPatel.net</title>
+<script type="text/javascript" src="custom/angular.min.js"></script>
+
+<script type="text/javascript" src="js/filterExample1.js"></script>
+</head>
+<body >
+
+<div ng-app="myModule">
+
+	<div ng-controller="myController">
+	Search by Name & salary:<input type="text" ng-model="filterTable"/><br/>
+ 	<!-- Search by salary:<input type="text" ng-model="filterTable.salary"/><br/>-->
+		<table>
+		<tr>
+			<th>Name</th>
+			<th>Dob</th>
+			<th>Gender</th>
+			<th>Salary</th>
+		</tr>
+		<tr ng-repeat="std in students | orderBy:sortColumn | filter:search"> <!-- | limitTo:applyRows:3 '+salary "   | orderBy:sortColumn-->
+		<td>{{std.name | lowercase}}</td>
+		<td>{{std.dob}}</td>
+		<td>{{std.gender | uppercase}}</td>
+		<td>{{std.salary}}</td>
+		</tr>
+		</table>
+	</div>
+</div>
+</body>
+
+</html>
+

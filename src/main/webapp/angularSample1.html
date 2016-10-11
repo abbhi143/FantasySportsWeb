@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html> <!--  Directive starting point, angular initialize in the block.-->
+<head>
+<title>Hello World, AngularJS - ViralPatel.net</title>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+
+<script type="text/javascript" src="js/angularTest.js"></script>
+</head>
+<body >
+<!-- <div ng-controller="myController">
+
+<input type="text" ng-model="message1" value="DEFAULT VALUE"/>
+<!-- <input type="text" ng-model="message2" value="DEFAULT VALUE"/>
+<input type="text" ng-model="message3" value="DEFAULT VALUE"/>
+<button ng-click="showAlert()">Show Alert</button>
+
+<div>
+
+{{studentDetails.id }}
+{{studentDetails.name }}
+{{studentDetails.getName() }}
+</div>
+</div>
+{{message3}}-->
+<div ng-app="myModule">
+
+
+	<div ng-controller="myController">
+	
+	
+	<!-- <input type="text" ng-model="message2" value="DEFAULT VALUE"/>
+		{{message1}}
+		
+		<button ng-click="getText()" >Call Function</button>
+		
+		 <img src="{{flag}}" alt="{{ name + ' Flag' }}"/>
+		<img ng-src="{{flag}}"/><br/>
+		 <img ng-src="path" alt="US FLAG"/>-->
+		<input type="checkbox" ng-model="showName"/>Show Name <br/>
+		{{showName}}
+		<table>
+		<tr ng-repeat="std in students">
+			<td>{{std.id}}<td>
+			<td ng-hide="!showName">{{std.name}}<td>
+		</tr>
+		</table>
+		<!-- <img src="{{flag}}"/>-->
+	  <img ng-src="{{flag}}"/>
+		
+	</div>
+</div>
+</body>
+
+</html>
+

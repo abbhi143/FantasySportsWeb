@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html> <!--  Directive starting point, angular initialize in the block.-->
+<head>
+<title>Hello World, AngularJS - ViralPatel.net</title>
+<script type="text/javascript" src="custom/angular.min.js"></script>
+
+<script type="text/javascript" src="js/customFilter.js"></script>
+</head>
+<body >
+
+<div ng-app="myModule">
+
+	<div ng-controller="myController">
+		<table>
+			<tr>
+				<th>Name</th>
+				<th>Dob</th>
+				<th>Gender</th>
+				<th>Salary</th>
+			</tr>
+			<tr ng-repeat="emp in students">
+				<td>{{emp.name}}				</td>	
+				<td>{{emp.dob}}					</td>	
+				<td>{{emp.gender | gender}}					</td>	
+				<td>{{emp.salary}}		</td>			
+			</tr>
+		</table>
+	</div>
+</div>
+</body>
+
+</html>
+

@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html> <!--  Directive starting point, angular initialize in the block.-->
+<head>
+
+<script type="text/javascript" src="custom/angular.min.js"></script>
+
+<script type="text/javascript" src="js/includeEx.js"></script>
+<style>
+ input.ng-invalid.ng-touched {
+     background-color: red; 
+   } 
+
+  input.ng-valid.ng-touched {
+     background-color: green; 
+   } 
+</style>
+</head>
+<body >
+
+<div ng-app="myModule" >
+
+	<div ng-controller="myController">
+	<form name="testForm" novalidate> {{testForm.email1.$error.email}}
+	<input type="email" name="email1" ng-model="email" required/>   <!-- [someName@somainDomin.com]===valid, not-->
+	<!--  <span style="color:red" ng-show="testForm.email1.$error.email">Invalid email address.</span> 
+	<span style="color:red" ng-show="testForm.email1.$error.required">Email should not be empty.</span><br/>-->
+	
+	Pristine:{{ testForm.email1.$pristine}} :didn't touch the field.<br/>
+	Dirty:{{ testForm.email1.$dirty}} :Modified the field <br/>
+	Valid:{{ testForm.email1.$valid}} :If the feild value is valid. <br/>
+	In Valid:{{ testForm.email1.$invalid}} :If the feild value is in-valid. <br/>
+	Pending:{{ testForm.testForm.$pending}} :didn't touch the field.<br/>
+	submitted:{{ testForm.testForm.$submitted}} :didn't touch the field.<br/>
+	
+	<input type="submit"/>
+	</form>
+	</div>
+	
+	<madhu>Test </madhu>
+	
+</div>
+</body>
+<!-- <form name="myForm" class="css-form" novalidate>
+	
+	Email:<input type="email" name= "email" ng-model="email" required/>
+	<span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+	  <span ng-show="myForm.email.$error.required">Email is required.</span>
+	  <span ng-show="myForm.email.$error.email">Invalid email address.</span>
+	  </span>
+	
+	<input type="submit" />
+	</form>-->
+</html>
+

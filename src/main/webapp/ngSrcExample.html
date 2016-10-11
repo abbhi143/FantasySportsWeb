@@ -1,0 +1,18 @@
+
+<!DOCTYPE html>
+<html ng-app="myModule"> <!--  Directive starting point, angular initialize in the block.-->
+<head>
+<title>Hello World, AngularJS - ViralPatel.net</title>
+<script type="text/javascript" src="custom/angular_uncompressed.js"></script>
+
+<script type="text/javascript" src="js/ngsrc.js"></script>
+</head>
+<body ng-app="myStudentApp">
+	<div ng-controller="ngsrcController">
+	Capital : {{ country.capital }}
+		<img ng-src="{{country.flag}}" alt="{{ country.name + ' Flag' }}" style="height:100px; width:200px" />
+		 
+	</div>
+</body>
+</html>
+

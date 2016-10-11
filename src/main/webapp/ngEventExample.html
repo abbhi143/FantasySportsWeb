@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html> <!--  Directive starting point, angular initialize in the block.-->
+<head>
+<title>Hello World, AngularJS - ViralPatel.net</title>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+
+<script type="text/javascript" src="js/angularEvent.js"></script>
+</head>
+<body >
+<!-- <div ng-controller="myController">
+
+<input type="text" ng-model="message1" value="DEFAULT VALUE"/>
+<!-- <input type="text" ng-model="message2" value="DEFAULT VALUE"/>
+<input type="text" ng-model="message3" value="DEFAULT VALUE"/>
+<button ng-click="showAlert()">Show Alert</button>
+
+<div>
+
+{{studentDetails.id }}
+{{studentDetails.name }}
+{{studentDetails.getName() }}
+</div>
+</div>
+{{message3}}-->
+<div ng-app="myModule">
+
+
+	<div ng-controller="myController">
+	<table>
+		<tr>
+		<th>Name</th>
+		<th>Likes</th>
+		<th>DisLikes</th>
+		<th>Buttons</th>
+		</tr>
+		<tr ng-repeat="course in courses">
+		<td> {{course.name}}</td>
+		<td> {{course.likes}}</td>
+		<td> {{course.dislikes}}</td>
+		<td><button ng-click="incrementLike(course)">Like</button><button ng-click="incrementDisLike(course)">DisLike</button></td>
+		</tr>
+	</table>
+
+	<ul ng-repeat="country in countires" ng-init="pindex=$index">{{country.name}}==={{$index}}
+		<li ng-repeat="city in country.cities">
+		{{city}}===={{$index}}==={{pindex}} 
+		</li>
+   </ul>
+	</div>
+</div>
+</body>
+
+</html>
+
